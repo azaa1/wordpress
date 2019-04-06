@@ -9,7 +9,8 @@
           dest: /tmp
       - name: unzip the file
         unarchive:
-          src: "/tmp/wordpress*"
+          src: "{{ items }}"
           #format: gzip
           dest: /tmp/
-          remote_src: True
+        with_fileglob:
+          - "/tmp/wordpress*"
