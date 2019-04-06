@@ -1,8 +1,6 @@
 ---
   - name: unziping wordpress
-    hosts: {{ host }}
-    become: yes
-    become_method: sudo
+    hosts: "{{ host }}"
     tasks:
       - name: install wp from e-link
         get_url:
